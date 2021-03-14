@@ -9,6 +9,7 @@ import Gallery from 'react-photo-gallery'
 import PopUp from "../components/popup"
 
 export default class IndexPage extends React.Component {
+    
 
     state = {
         shown: false
