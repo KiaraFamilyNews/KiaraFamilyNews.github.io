@@ -10,6 +10,7 @@ import PopUp from "../components/popup"
 import Message from "../components/Message"
 
 export default class IndexPage extends React.Component {
+    
 
     state = {
         shown: false
