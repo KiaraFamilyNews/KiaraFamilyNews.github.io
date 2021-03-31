@@ -9,7 +9,7 @@ import LazyHero from 'react-lazy-hero';
 import KiaraGangimari from '../images/kiara-gangimari.png'
 import Header from "../components/header2"
 
-import "../styles/home.css"
+import "../styles/home.scss"
 
 export default class IndexPage extends React.Component {
 
@@ -36,15 +36,26 @@ export default class IndexPage extends React.Component {
             <Layout>
                 <SEO title="Home" />
                 <Header siteTitle="Kiara Million" />
-                <LazyHero className="top-hero" imageSrc={KiaraGangimari} isFixed opacity="0.4" color="#000000" isCentered={true}>
+                 {/* <LazyHero imageSrc={KiaraGangimari} isFixed opacity="0.4" color="#000000" isCentered={true}>
                     <Container>
                         <h1>KIKKERIKIIIII!!!!</h1>
                         <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue hendrerit mollis. Duis venenatis, elit sed blandit efficitur, turpis massa finibus lacus, vel sollicitudin metus odio ultrices enim. Mauris pharetra nibh nibh, et mollis magna cursus interdum. Curabitur mauris velit, lobortis non sem et, tristique varius nisi. Curabitur dapibus non arcu ac faucibus. Aliquam quis porttitor neque. Nam ac est tristique, eleifend felis sed, ultricies neque. Cras justo tortor, eleifend non diam vel, ultricies fringilla risus. Nullam ullamcorper accumsan nulla. Donec quis vehicula leo, ac rhoncus nunc.
                         </p>
                     </Container>
-                </LazyHero>
-                <div class="home-hero-1">
+                </LazyHero>  */}
+                <div className="top-hero" >
+                    <div className="top-hero-image-layer"></div>
+                    <div className="top-hero-color-layer">
+                        <Container>
+                            <h1>KIKKERIKIIIII!!!!</h1>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue hendrerit mollis. Duis venenatis, elit sed blandit efficitur, turpis massa finibus lacus, vel sollicitudin metus odio ultrices enim. Mauris pharetra nibh nibh, et mollis magna cursus interdum. Curabitur mauris velit, lobortis non sem et, tristique varius nisi. Curabitur dapibus non arcu ac faucibus. Aliquam quis porttitor neque. Nam ac est tristique, eleifend felis sed, ultricies neque. Cras justo tortor, eleifend non diam vel, ultricies fringilla risus. Nullam ullamcorper accumsan nulla. Donec quis vehicula leo, ac rhoncus nunc.
+                            </p>
+                        </Container>
+                    </div>
+                </div>
+                <div className="home-hero-1">
                     <Container>
                         <h1>KIKKERIKIIIII!!!!</h1>
                         <p>
@@ -52,7 +63,7 @@ export default class IndexPage extends React.Component {
                         </p>
                     </Container>
                 </div>
-                <div class="home-hero-2">
+                <div className="home-hero-2">
                     <Container>
                         <h1>KIKKERIKIIIII!!!!</h1>
                         <p>
@@ -60,7 +71,7 @@ export default class IndexPage extends React.Component {
                         </p>
                     </Container>
                 </div>
-                <div class="home-hero-1">
+                <div className="home-hero-1">
                     <Container>
                         <h1>KIKKERIKIIIII!!!!</h1>
                         <p>

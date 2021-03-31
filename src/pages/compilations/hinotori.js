@@ -5,8 +5,6 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Header from "../../components/header2"
 
-import "../../styles/home.css"
-
 export default class HinotoriPage extends React.Component {
     
     state = {
