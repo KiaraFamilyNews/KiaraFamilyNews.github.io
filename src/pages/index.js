@@ -33,7 +33,7 @@ export default class IndexPage extends React.Component {
 
     render() {
         return (
-            <Layout>
+            <div>
                 <SEO title="Home" />
                 <Header siteTitle="Kiara Million" />
                  {/* <LazyHero imageSrc={KiaraGangimari} isFixed opacity="0.4" color="#000000" isCentered={true}>
@@ -76,7 +76,7 @@ export default class IndexPage extends React.Component {
                         </p>
                     </Container>
                 </div>
-            </Layout>
+            </div>
         )
     }
 }

@@ -12,13 +12,13 @@ export default class MomentsPage extends React.Component {
 
     render() {
         return (
-            <Layout>
+            <div>
                 <SEO title="Home" />
                 <Header siteTitle="Kiara Million" />
                 <div>
                     <h1>Memorable Moments</h1>
                 </div>
-            </Layout>
+            </div>
         )
     }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import ResizeObserver from 'resize-observer-polyfill';
 import Photo, { photoPropType } from './Photo';
@@ -19,7 +19,7 @@ const Gallery = React.memo(function Gallery({
   const [containerWidth, setContainerWidth] = useState(0);
   const galleryEl = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let animationFrameID = null;
     const observer = new ResizeObserver(entries => {
       // only do something if width changes
@@ -81,11 +81,12 @@ const Gallery = React.memo(function Gallery({
     // set default breakpoints if user doesn't specify columns prop
     if (columns === undefined) {
       columns = 1;
-      if (containerWidth >= 500) columns = 2;
-      if (containerWidth >= 900) columns = 3;
-      if (containerWidth >= 1500) columns = 4;
+      if (containerWidth >= 797) columns = 2;  // 797
+      if (containerWidth >= 1189) columns = 3; // 1189
+      if (containerWidth >= 1585) columns = 4; // 1585
     }
     galleryStyle = { position: 'relative' };
+    console.log(width + "\n" + containerWidth + "\n" + columns + "\n" + margin)
     thumbs = computeColumnLayout({ containerWidth: width, columns, margin, photos });
     galleryStyle.height = thumbs[thumbs.length - 1].containerHeight;
   }
@@ -107,6 +108,7 @@ const Gallery = React.memo(function Gallery({
             onClick: onClick ? handleClick : null,
             photo,
             message: thumb.message || "placeholder",
+            author: thumb.author || "Yagoo"
           });
         })}
       </div>

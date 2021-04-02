@@ -1,21 +1,15 @@
-// @import KiaraGangimari from '../images/kiara-gangimari.png'
-
 .top-hero {
     min-height:100%;
     background: url("../images/kiara-gangimari.png");
     background-size:cover;
     box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.4);
     position: relative;
-    padding: 5rem 2rem;
+    padding: 20vh 2rem;
     background-position-y:center;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 }
 .top-hero-image-layer{
     background-position-y:center;

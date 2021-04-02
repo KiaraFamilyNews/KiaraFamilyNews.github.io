@@ -13,13 +13,13 @@ export default class MinecraftPage extends React.Component {
 
     render() {
         return (
-            <Layout>
+            <div>
                 <SEO title="Home" />
                 <Header siteTitle="Kiara Million" />
                 <div>
                     <h1>Minecraft Project</h1>
                 </div>
-            </Layout>
+            </div>
         )
     }
 }

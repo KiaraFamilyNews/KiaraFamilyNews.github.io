@@ -15,21 +15,8 @@ import "../scss/custom.scss"
 import "../styles/common.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <div>
-        <main>{children}</main>
-      </div>
     </>
   )
 }

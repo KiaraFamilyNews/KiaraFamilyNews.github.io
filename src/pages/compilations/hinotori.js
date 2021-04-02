@@ -12,13 +12,13 @@ export default class HinotoriPage extends React.Component {
 
     render() {
         return (
-            <Layout>
+            <div>
                 <SEO title="Home" />
                 <Header siteTitle="Kiara Million" />
                 <div>
                     <h1>Hinotori Project</h1>
                 </div>
-            </Layout>
+            </div>
         )
     }
 }

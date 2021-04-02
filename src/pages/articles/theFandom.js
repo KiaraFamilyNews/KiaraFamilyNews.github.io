@@ -13,13 +13,13 @@ export default class TheFandomPage extends React.Component {
 
     render() {
         return (
-            <Layout>
+            <div>
                 <SEO title="Home" />
                 <Header siteTitle="Kiara Million" />
                 <div>
                     <h1>The Fandom</h1>
                 </div>
-            </Layout>
+            </div>
         )
     }
 }

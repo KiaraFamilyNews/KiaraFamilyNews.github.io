@@ -12,13 +12,13 @@ export default class RoadToMillionPage extends React.Component {
 
     render() {
         return (
-            <Layout>
+            <div>
                 <SEO title="Home" />
                 <Header siteTitle="Kiara Million" />
                 <div>
                     <h1>Road to 1 Million</h1>
                 </div>
-            </Layout>
+            </div>
         )
     }
 }
