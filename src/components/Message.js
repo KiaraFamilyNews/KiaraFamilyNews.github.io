@@ -5,6 +5,7 @@ const messageWithClick = { cursor: 'pointer' };
 
 const Message = ({ index, onClick, photo, margin, direction, top, left, key, message, author }) => {
     const messageStyle = { width: photo.width, height : photo.height, margin: margin,  };
+    const messageTextstyle = {"font-size": Math.min(0.006 * photo.width - 0.94, 1.4) + "rem" }
     if (direction === 'column') {
         messageStyle.position = 'absolute';
         messageStyle.left = left;
@@ -24,7 +25,7 @@ const Message = ({ index, onClick, photo, margin, direction, top, left, key, mes
         onClick={onClick ? handleClick : null}
       >
         <div className="message-card-content">
-          <p className="message-card-message">"{message}"</p>
+          <p className="message-card-message" style={messageTextstyle}>"{message}"</p>
           <p className="message-card-author">{author}</p>
         </div>
       </div>
