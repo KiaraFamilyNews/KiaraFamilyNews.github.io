@@ -11,6 +11,7 @@ var canvas = null
 var imageZoom = 1
 var imageInstances = []
 
+// credit: https://jsfiddle.net/fvzj7z1d/7/
 function setCanvasZoom(zoom) {
   var objects = canvas.getObjects();
   for(var i in objects) {
