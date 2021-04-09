@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import "../../styles/art/artCanvas.css"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -20,6 +20,15 @@ import image3src from "../../images/smolltakamori.jpeg"
 
 
 export default class TheFandomPage extends React.Component {
+
+    componentDidMount(){
+        document.body.style.backgroundColor = "#e76f51"
+    }
+    
+    componentWillUnmount(){
+        document.body.style.backgroundColor = null;
+    }
+
     state = {
     };
 
@@ -29,10 +38,7 @@ export default class TheFandomPage extends React.Component {
             <div>
                 <SEO title="Home" />
                 <Header siteTitle="Kiara Million" />
-                <div
-                style={{
-                    padding: `0 16px 0`,
-                    }}>
+                <div className="art-canvas-content">
                     <h1>Art Canvas</h1>
                     <BrowserView>
                         <Canvas images={images} widthPadding={32} heightPadding={142}/>

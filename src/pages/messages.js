@@ -44,13 +44,7 @@ export default class MessagesPage extends React.Component {
             <div>
                 <SEO title="Messages" />
                 <Header className="navbar-messages" siteTitle="Kiara Million" />
-                <div className="message-container"
-                    style={{
-                    margin: `0 auto`,
-                    maxWidth: 1660,
-                    padding: `0 1.0875rem 1.45rem`,
-                    }}
-                >
+                <div className="message-container">
                     <h1>Messages</h1>
                     <Gallery photos={messages} margin={5} direction={"column"} onClick={this.test} renderImage={Message} />
                     {/* <Gallery photos={photos} margin={5} direction={"column"} onClick={this.test} /> */}

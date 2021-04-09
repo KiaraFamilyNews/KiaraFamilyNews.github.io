@@ -6,7 +6,7 @@ import Nav from "react-bootstrap/Nav"
 import NavDropdown from "react-bootstrap/NavDropdown"
 
 const Header = ({ siteTitle, className }) => (
-    <Navbar className={className} bg="primary" variant="dark" expand="lg">
+    <Navbar className={className} bg="primary" variant="dark" expand="lg" fixed="top">
         <Navbar.Brand href="/">
             Kiara Million
         </Navbar.Brand>
