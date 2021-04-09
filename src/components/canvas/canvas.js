@@ -53,12 +53,12 @@ export default class Canvas extends React.Component {
 
       canvas.setDimensions({
         width: window.innerWidth,
-        height: window.innerHeight - 55,
+        height: window.innerHeight - 142,
       })
 
       window.onresize = function(){
         var width = window.innerWidth;
-        var height = window.innerHeight - 55;
+        var height = window.innerHeight - 142;
         console.log('height: ' + height);
         console.log('width: ' + width);
 
