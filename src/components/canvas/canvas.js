@@ -7,6 +7,7 @@ import image3src from "../../images/smolltakamori.jpeg"
 
 import "./canvas.css"
 
+
 var canvas = null
 var imageZoom = 1
 var imageInstances = []
@@ -36,11 +37,16 @@ function setCanvasZoom(zoom) {
   }
 };
 
+var widthPadding = 0;
+var heightPadding = 0;
 
 export default class Canvas extends React.Component {
   constructor(props) {
     super(props)
     this.state = { canvas: null }
+    this.state.images = props.images
+    widthPadding = props.widthPadding || 0
+    heightPadding = props.heightPadding || 0
   }
 
   componentDidMount() {
@@ -50,15 +56,16 @@ export default class Canvas extends React.Component {
       canvas = new fabric.Canvas("imageboard")
       
       canvas.selection = false
+      canvas.backgroundColor = 'white'
 
       canvas.setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight - 142,
+        width: window.innerWidth - widthPadding,
+        height: window.innerHeight - heightPadding,
       })
 
       window.onresize = function(){
-        var width = window.innerWidth;
-        var height = window.innerHeight - 142;
+        var width = window.innerWidth - widthPadding;
+        var height = window.innerHeight - heightPadding;
         console.log('height: ' + height);
         console.log('width: ' + width);
 
@@ -161,7 +168,7 @@ export default class Canvas extends React.Component {
       //   setCanvasZoom(window.innerWidth / 1710)
       // });
 
-      images.forEach( (imageItem, index) => {
+      this.state.images.forEach( (imageItem, index) => {
         let image = new Image()
         image.src = imageItem.src
         image.onload = () => {
@@ -190,7 +197,7 @@ export default class Canvas extends React.Component {
       <React.Fragment>
         <div id="canvas-container">
           <canvas style={{ border: "solid 1px #555" }} id="imageboard" />
-          {images.map((image, index) => {
+          {this.state.images.map((image, index) => {
             return <span id={"ref" + index} className="toolTip">{"ToolTip" + index}</span>
           })}
         </div>
@@ -198,34 +205,3 @@ export default class Canvas extends React.Component {
     )
   }
 }
-
-
-const images = [
-  {
-    src: image1src,
-    left: 0,
-    top: 0,
-    angle: 0,
-    opacity: 1,
-    scaleX: 0.3,
-    scaleY: 0.3,
-  },
-  {
-    src: image2src,
-    left: 1490,
-    top: 0,
-    angle: 0,
-    opacity: 1,
-    scaleX: 0.3,
-    scaleY: 0.3,
-  },
-  {
-    src: image3src,
-    left: 500,
-    top: 600,
-    angle: 0,
-    opacity: 1,
-    scaleX: 0.2,
-    scaleY: 0.2,
-  },
-]
