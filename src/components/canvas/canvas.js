@@ -16,24 +16,24 @@ var imageInstances = []
 function setCanvasZoom(zoom) {
   var objects = canvas.getObjects();
   for(var i in objects) {
-     var object = objects[i];
-    var scaleX = object.scaleX,
+      var object = objects[i];
+      var scaleX = object.scaleX,
       scaleY = object.scaleY,
       left = object.left,
       top = object.top;
     
-    // preserve the original dimensions.
-    object.original_scaleX = !object.original_scaleX ? scaleX : object.original_scaleX;
-    object.original_scaleY = !object.original_scaleY ? scaleY : object.original_scaleY;
-    object.original_left = !object.original_left ? left : object.original_left;
-    object.original_top = !object.original_top ? top : object.original_top;
-    
-    object.scaleX = object.original_scaleX * zoom;
-    object.scaleY = object.original_scaleY * zoom;
-    object.left = object.original_left * zoom;
-    object.top = object.original_top * zoom;
-    
-    object.setCoords();
+      // preserve the original dimensions.
+      object.original_scaleX = !object.original_scaleX ? scaleX : object.original_scaleX;
+      object.original_scaleY = !object.original_scaleY ? scaleY : object.original_scaleY;
+      object.original_left = !object.original_left ? left : object.original_left;
+      object.original_top = !object.original_top ? top : object.original_top;
+      
+      object.scaleX = object.original_scaleX * zoom;
+      object.scaleY = object.original_scaleY * zoom;
+      object.left = object.original_left * zoom;
+      object.top = object.original_top * zoom;
+      
+      object.setCoords();
   }
 };
 
@@ -172,13 +172,20 @@ export default class Canvas extends React.Component {
         let image = new Image()
         image.src = imageItem.src
         image.onload = () => {
+        
+          var zoom = (window.innerWidth - widthPadding) / 1710
+
           let imgInstance = new fabric.Image(image, {
-            left: imageItem.left,
-            top: imageItem.top,
+            left: imageItem.left * zoom,
+            top: imageItem.top * zoom,
+            original_left: imageItem.left,
+            original_top: imageItem.top,
             angle: imageItem.angle,
             opacity: imageItem.opacity,
-            scaleX: imageItem.scaleX,
-            scaleY: imageItem.scaleY,
+            scaleX: imageItem.scaleX * zoom,
+            scaleY: imageItem.scaleY * zoom,
+            original_scaleX: imageItem.scaleX,
+            original_scaleY: imageItem.scaleY
           })
           //dissables to select this image
           imgInstance.set("selectable", false)
