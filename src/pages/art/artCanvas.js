@@ -40,12 +40,7 @@ export default class TheFandomPage extends React.Component {
                 <Header siteTitle="Kiara Million" />
                 <div className="art-canvas-content">
                     <h1>Art Canvas</h1>
-                    <BrowserView>
-                        <Canvas images={images} widthPadding={32} heightPadding={142}/>
-                    </BrowserView>
-                    <MobileView>
-                        <Gallery photos={images} margin={5} direction={"column"}/>
-                    </MobileView>
+                    {isBrowser ? <Canvas images={images} widthPadding={32} heightPadding={142}/> : <Gallery photos={images} margin={5} direction={"column"}/>}
                 </div>
             </div>
         )

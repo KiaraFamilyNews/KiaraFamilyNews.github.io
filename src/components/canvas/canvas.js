@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react"
-// import { fabric } from "fabric"
-
-import image1src from "../../images/dontstarve.jpeg"
-import image2src from "../../images/milfkiara.jpeg"
-import image3src from "../../images/smolltakamori.jpeg"
 
 import "./canvas.css"
 
 
 var canvas = null
-var imageZoom = 1
-var imageInstances = []
+var tooltipState = ""
 
 // credit: https://jsfiddle.net/fvzj7z1d/7/
 function setCanvasZoom(zoom) {
@@ -147,8 +141,8 @@ export default class Canvas extends React.Component {
 
       canvas.on("mouse:over", function (e) {
         let tooltip = e.target?.tooltipRef
-        console.log(tooltip)
-        if (tooltip) {
+        if (tooltip && tooltipState == "") {
+          tooltipState = tooltip
           let span = document.querySelector('span[id="' + tooltip + '"]')
           span.style.visibility = 'visible'
           span.style.top = e.e.offsetY + 'px'
@@ -157,7 +151,9 @@ export default class Canvas extends React.Component {
       })
 
       canvas.on("mouse:out", function (e) {
+        console.log("out")
         let tooltip = e.target?.tooltipRef
+        tooltipState=""
         if (tooltip) {
           let span = document.querySelector('span[id="' + tooltip + '"]')
           span.style.visibility = 'hidden'
@@ -205,7 +201,7 @@ export default class Canvas extends React.Component {
         <div id="canvas-container">
           <canvas style={{ border: "solid 1px #555" }} id="imageboard" />
           {this.state.images.map((image, index) => {
-            return <span id={"ref" + index} className="toolTip">{"ToolTip" + index}</span>
+            return <span id={"ref" + index} className="toolTip"><img src={image.src} width="100%"/></span>
           })}
         </div>
       </React.Fragment>
