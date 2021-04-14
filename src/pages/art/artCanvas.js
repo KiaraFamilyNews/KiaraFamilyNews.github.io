@@ -1,7 +1,8 @@
-import * as React from "react"
+import "../../components/layout"
 import "../../styles/art/artCanvas.css"
 
-import Layout from "../../components/layout"
+import * as React from "react"
+
 import SEO from "../../components/seo"
 import Header from "../../components/header2"
 
@@ -20,14 +21,6 @@ import image3src from "../../images/smolltakamori.jpeg"
 
 
 export default class TheFandomPage extends React.Component {
-
-    componentDidMount(){
-        document.body.style.backgroundColor = "#e76f51"
-    }
-    
-    componentWillUnmount(){
-        document.body.style.backgroundColor = null;
-    }
 
     state = {
     };

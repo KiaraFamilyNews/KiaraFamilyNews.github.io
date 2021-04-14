@@ -1,3 +1,6 @@
+import "../components/layout"
+import "../styles/messages.css"
+
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
@@ -8,7 +11,7 @@ import Gallery from '../components/react-photo-gallery/Gallery'
 import PopUp from "../components/popup"
 import Message from "../components/Message"
 import Header from "../components/header2"
-import "../styles/messages.css"
+
 
 export default class MessagesPage extends React.Component {
     
