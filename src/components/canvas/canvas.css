@@ -1,13 +1,21 @@
 .toolTip{
     position: absolute;
     z-index: 1;
-    background: rgb(119, 128, 0);
-    height: 500px;
-    width: 500px;
+    background: #f9ded7;
     padding: 8px;
     font-size: 13px;
     color: #fff;
-    visibility: hidden;
-    top:10px;
-    left:0px;
+    height: 800px;
+    width: 700px;
+    top:100px;
+    left:10px;
   }
+
+.tooltip-image-div{
+  height: 50%;
+  text-align: center;
+}
+
+.tooltip-image{
+  max-height: 100%;
+}

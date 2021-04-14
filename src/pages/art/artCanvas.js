@@ -55,6 +55,9 @@ const images = [
         opacity: 1,
         scaleX: 0.3,
         scaleY: 0.3,
+
+        message: "Nunc sed blandit libero volutpat. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Elit duis tristique sollicitudin nibh sit amet commodo.",
+        artist: "Yagoo 1"
     },
     {
         src: image2src,
@@ -66,6 +69,9 @@ const images = [
         opacity: 1,
         scaleX: 0.3,
         scaleY: 0.3,
+
+        message: "Nunc sed blandit libero volutpat. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Elit duis tristique sollicitudin nibh sit amet commodo.",
+        artist: "Yagoo 2"
     },
     {
         src: image3src,
@@ -77,5 +83,8 @@ const images = [
         opacity: 1,
         scaleX: 0.2,
         scaleY: 0.2,
+
+        message: "Nunc sed blandit libero volutpat. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Elit duis tristique sollicitudin nibh sit amet commodo.",
+        artist: "Yagoo 3"
     },
 ];

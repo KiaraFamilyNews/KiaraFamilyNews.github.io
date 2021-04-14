@@ -5,6 +5,9 @@ import "./canvas.css"
 
 var canvas = null
 var tooltipState = ""
+var tooltipBaseHeight = 600
+var tooltipBaseWitdh = 500
+var allImages
 
 // credit: https://jsfiddle.net/fvzj7z1d/7/
 function setCanvasZoom(zoom) {
@@ -27,6 +30,10 @@ function setCanvasZoom(zoom) {
       object.left = object.original_left * zoom;
       object.top = object.original_top * zoom;
       
+      var tooltip = document.getElementById("toolTip")
+      tooltip.style.width = tooltipBaseWitdh * zoom + "px";
+      tooltip.style.height = tooltipBaseHeight * zoom + "px";
+      
       object.setCoords();
   }
 };
@@ -45,6 +52,9 @@ export default class Canvas extends React.Component {
 
   componentDidMount() {
     if (typeof window !== `undefined`) {
+
+      allImages = this.state.images
+
       const fabric = require("fabric").fabric 
       
       canvas = new fabric.Canvas("imageboard")
@@ -140,24 +150,26 @@ export default class Canvas extends React.Component {
       })
 
       canvas.on("mouse:over", function (e) {
-        let tooltip = e.target?.tooltipRef
-        if (tooltip && tooltipState == "") {
-          tooltipState = tooltip
-          let span = document.querySelector('span[id="' + tooltip + '"]')
-          span.style.visibility = 'visible'
-          span.style.top = e.e.offsetY + 'px'
-          span.style.left = e.e.offsetX + 'px'
-        }
+        let index = e.target?.tooltipRef
+        document.getElementById("tooltip-image").src = allImages[index].src
+        // let tooltip = e.target?.tooltipRef
+        // if (tooltip && tooltipState == "") {
+        //   tooltipState = tooltip
+        //   let span = document.querySelector('span[id="' + tooltip + '"]')
+        //   span.style.visibility = 'visible'
+        //   span.style.top = e.e.offsetY + 'px'
+        //   span.style.left = e.e.offsetX + 'px'
+        // }
       })
 
       canvas.on("mouse:out", function (e) {
-        console.log("out")
-        let tooltip = e.target?.tooltipRef
-        tooltipState=""
-        if (tooltip) {
-          let span = document.querySelector('span[id="' + tooltip + '"]')
-          span.style.visibility = 'hidden'
-        }
+        // console.log("out")
+        // let tooltip = e.target?.tooltipRef
+        // tooltipState=""
+        // if (tooltip) {
+        //   let span = document.querySelector('span[id="' + tooltip + '"]')
+        //   span.style.visibility = 'hidden'
+        // }
       })
 
       // canvas.on('after:render', function() {
@@ -185,11 +197,15 @@ export default class Canvas extends React.Component {
           })
           //dissables to select this image
           imgInstance.set("selectable", false)
-          imgInstance.set("tooltipRef", "ref" + index)
+          imgInstance.set("tooltipRef", index)
           canvas.add(imgInstance)
         }
       })
       
+      var zoom = (window.innerWidth - widthPadding) / 1710
+      var tooltip = document.getElementById("toolTip")
+      tooltip.style.width = tooltipBaseWitdh * zoom + "px";
+      tooltip.style.height = tooltipBaseHeight * zoom + "px";
       
     }
     
@@ -200,9 +216,14 @@ export default class Canvas extends React.Component {
       <React.Fragment>
         <div id="canvas-container">
           <canvas style={{ border: "solid 1px #555" }} id="imageboard" />
-          {this.state.images.map((image, index) => {
+          <div id="toolTip" className="toolTip">
+            <div className="tooltip-image-div">
+              <img id="tooltip-image" className="tooltip-image" src={this.state.images[2].src}/>
+            </div>
+          </div>
+          {/* {this.state.images.map((image, index) => {
             return <span id={"ref" + index} className="toolTip"><img src={image.src} width="100%"/></span>
-          })}
+          })} */}
         </div>
       </React.Fragment>
     )
