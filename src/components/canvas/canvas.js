@@ -4,9 +4,11 @@ import "./canvas.css"
 
 
 var canvas = null
-var tooltipState = ""
 var tooltipBaseHeight = 600
 var tooltipBaseWitdh = 500
+var messageBaseSize = 30
+var authorBaseSize = 20
+var zoom = 1
 var allImages
 
 // credit: https://jsfiddle.net/fvzj7z1d/7/
@@ -33,6 +35,8 @@ function setCanvasZoom(zoom) {
       var tooltip = document.getElementById("toolTip")
       tooltip.style.width = tooltipBaseWitdh * zoom + "px";
       tooltip.style.height = tooltipBaseHeight * zoom + "px";
+      document.getElementById("tooltip-message").style.fontSize = messageBaseSize * zoom + "px";
+      document.getElementById("tooltip-author").style.fontSize = authorBaseSize * zoom + "px";
       
       object.setCoords();
   }
@@ -70,8 +74,6 @@ export default class Canvas extends React.Component {
       window.onresize = function(){
         var width = window.innerWidth - widthPadding;
         var height = window.innerHeight - heightPadding;
-        console.log('height: ' + height);
-        console.log('width: ' + width);
 
         canvas.setDimensions({
             width: width,
@@ -87,7 +89,7 @@ export default class Canvas extends React.Component {
       //zoom function
       canvas.on("mouse:wheel", function (opt) {
         var delta = opt.e.deltaY
-        var zoom = canvas.getZoom()
+        zoom = canvas.getZoom()
         zoom *= 0.999 ** delta
         if (zoom > 10) zoom = 10
         if (zoom < 1) zoom = 1
@@ -143,6 +145,29 @@ export default class Canvas extends React.Component {
           this.lastPosX = x
           this.lastPosY = y
         }
+        if (this.isHover) {
+          var toolTip = document.getElementById("toolTip")
+
+          // toolTip.style.left = (opt.e.clientY + 50) + 'px'
+          // toolTip.style.top = (opt.e.clientX + 50) + 'px'
+
+          if (opt.e.clientX < window.innerWidth / 2)
+          {
+            toolTip.style.left = (opt.e.clientX + (50 * zoom)) + 'px'
+          }
+          else
+          {
+            toolTip.style.left = (opt.e.clientX - ((tooltipBaseWitdh - 50) * zoom)) + 'px'
+          }
+          if (opt.e.clientY < window.innerHeight / 2)
+          {
+            toolTip.style.top = (opt.e.clientY + (50 * zoom)) + 'px'
+          }
+          else
+          {
+            toolTip.style.top = (opt.e.clientY - ((tooltipBaseWitdh - 50) * zoom)) + 'px'
+          }
+        }
       })
       canvas.on("mouse:up", function (opt) {
         this.setViewportTransform(this.viewportTransform)
@@ -151,7 +176,20 @@ export default class Canvas extends React.Component {
 
       canvas.on("mouse:over", function (e) {
         let index = e.target?.tooltipRef
-        document.getElementById("tooltip-image").src = allImages[index].src
+        if (allImages[index] != null)
+        {
+          var toolTip = document.getElementById("toolTip")
+          toolTip.style.visibility = 'visible'
+          console.log(e.e.clientX + " x " + e.e.clientY)
+          toolTip.style.backgroundImage = "url(" + allImages[index].src + ")"
+          document.getElementById("tooltip-message").innerHTML = allImages[index].message
+          document.getElementById("tooltip-author").innerHTML = allImages[index].artist
+          this.isHover = true
+
+          
+          
+          
+        }
         // let tooltip = e.target?.tooltipRef
         // if (tooltip && tooltipState == "") {
         //   tooltipState = tooltip
@@ -163,13 +201,12 @@ export default class Canvas extends React.Component {
       })
 
       canvas.on("mouse:out", function (e) {
-        // console.log("out")
-        // let tooltip = e.target?.tooltipRef
-        // tooltipState=""
-        // if (tooltip) {
-        //   let span = document.querySelector('span[id="' + tooltip + '"]')
-        //   span.style.visibility = 'hidden'
-        // }
+        let index = e.target?.tooltipRef
+        if (allImages[index] != null) {
+          var toolTip = document.getElementById("toolTip")
+          toolTip.style.visibility = 'hidden'
+          this.isHover = false
+        }
       })
 
       // canvas.on('after:render', function() {
@@ -181,7 +218,7 @@ export default class Canvas extends React.Component {
         image.src = imageItem.src
         image.onload = () => {
         
-          var zoom = (window.innerWidth - widthPadding) / 1710
+          zoom = (window.innerWidth - widthPadding) / 1710
 
           let imgInstance = new fabric.Image(image, {
             left: imageItem.left * zoom,
@@ -202,10 +239,16 @@ export default class Canvas extends React.Component {
         }
       })
       
-      var zoom = (window.innerWidth - widthPadding) / 1710
+      zoom = (window.innerWidth - widthPadding) / 1710
       var tooltip = document.getElementById("toolTip")
       tooltip.style.width = tooltipBaseWitdh * zoom + "px";
       tooltip.style.height = tooltipBaseHeight * zoom + "px";
+      document.getElementById("tooltip-message").style.fontSize = messageBaseSize * zoom + "px";
+      document.getElementById("tooltip-author").style.fontSize = authorBaseSize * zoom + "px";
+      
+      document.getElementById("toolTip").style.backgroundRepeat = "no-repeat";
+      document.getElementById("toolTip").style.backgroundPosition = "center";
+      document.getElementById("toolTip").style.backgroundSize = "contain";
       
     }
     
@@ -216,10 +259,9 @@ export default class Canvas extends React.Component {
       <React.Fragment>
         <div id="canvas-container">
           <canvas style={{ border: "solid 1px #555" }} id="imageboard" />
-          <div id="toolTip" className="toolTip">
-            <div className="tooltip-image-div">
-              <img id="tooltip-image" className="tooltip-image" src={this.state.images[2].src}/>
-            </div>
+          <div id="toolTip">
+            <p id="tooltip-message">Nunc sed blandit libero volutpat. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Elit duis tristique sollicitudin nibh sit amet commodo.</p>
+            <p id="tooltip-author">Author</p>
           </div>
           {/* {this.state.images.map((image, index) => {
             return <span id={"ref" + index} className="toolTip"><img src={image.src} width="100%"/></span>

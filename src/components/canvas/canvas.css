@@ -1,21 +1,33 @@
-.toolTip{
+#toolTip{
     position: absolute;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);
     z-index: 1;
-    background: #f9ded7;
-    padding: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: #ffffff;
+    padding: 30px;
     font-size: 13px;
     color: #fff;
-    height: 800px;
-    width: 700px;
     top:100px;
     left:10px;
+    visibility: hidden;
   }
 
-.tooltip-image-div{
+#tooltip-image-div{
   height: 50%;
   text-align: center;
 }
 
-.tooltip-image{
+#tooltip-image{
   max-height: 100%;
+}
+
+#tooltip-message{
+  height: 90%;
+  color: #212529;
+  color: #eeeeee;
+}
+
+#tooltip-author{
+  color: #eeeeee;
 }
