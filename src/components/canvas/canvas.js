@@ -4,12 +4,10 @@ import "./canvas.css"
 
 
 var canvas = null
-var tooltipBaseHeight = 600
-var tooltipBaseWitdh = 500
-var messageBaseSize = 30
-var authorBaseSize = 20
 var zoom = 1
 var allImages
+var lightBox
+var lightBoxImageDiv
 
 // credit: https://jsfiddle.net/fvzj7z1d/7/
 function setCanvasZoom(zoom) {
@@ -32,12 +30,6 @@ function setCanvasZoom(zoom) {
       object.left = object.original_left * zoom;
       object.top = object.original_top * zoom;
       
-      var tooltip = document.getElementById("toolTip")
-      tooltip.style.width = tooltipBaseWitdh * zoom + "px";
-      tooltip.style.height = tooltipBaseHeight * zoom + "px";
-      document.getElementById("tooltip-message").style.fontSize = messageBaseSize * zoom + "px";
-      document.getElementById("tooltip-author").style.fontSize = authorBaseSize * zoom + "px";
-      
       object.setCoords();
   }
 };
@@ -50,6 +42,8 @@ export default class Canvas extends React.Component {
     super(props)
     this.state = { canvas: null }
     this.state.images = props.images
+    lightBox = props.lightBox
+    lightBoxImageDiv = props.lightBoxImageDiv
     widthPadding = props.widthPadding || 0
     heightPadding = props.heightPadding || 0
   }
@@ -103,6 +97,7 @@ export default class Canvas extends React.Component {
 
       // drag function
       canvas.on("mouse:down", function (opt) {
+        this.hasMoved = false
         console.log(this.viewportTransform)
         var evt = opt.e
         var x = 0;
@@ -124,6 +119,7 @@ export default class Canvas extends React.Component {
       })
       canvas.on("mouse:move", function (opt) {
         if (this.isDragging) {
+          this.hasMoved = true
           var evt = opt.e
           var x = 0;
           var y = 0;
@@ -145,68 +141,45 @@ export default class Canvas extends React.Component {
           this.lastPosX = x
           this.lastPosY = y
         }
-        if (this.isHover) {
-          var toolTip = document.getElementById("toolTip")
-
-          // toolTip.style.left = (opt.e.clientY + 50) + 'px'
-          // toolTip.style.top = (opt.e.clientX + 50) + 'px'
-
-          if (opt.e.clientX < window.innerWidth / 2)
-          {
-            toolTip.style.left = (opt.e.clientX + (50 * zoom)) + 'px'
-          }
-          else
-          {
-            toolTip.style.left = (opt.e.clientX - ((tooltipBaseWitdh - 50) * zoom)) + 'px'
-          }
-          if (opt.e.clientY < window.innerHeight / 2)
-          {
-            toolTip.style.top = (opt.e.clientY + (50 * zoom)) + 'px'
-          }
-          else
-          {
-            toolTip.style.top = (opt.e.clientY - ((tooltipBaseWitdh - 50) * zoom)) + 'px'
-          }
-        }
+        
       })
       canvas.on("mouse:up", function (opt) {
         this.setViewportTransform(this.viewportTransform)
         this.isDragging = false
+        if (!this.hasMoved)
+        {
+          console.log(opt)
+          let index = opt.target?.tooltipRef
+          if (allImages[index] != null)
+          {
+            var toolTip = document.getElementById(lightBox)
+            toolTip.style.visibility = 'visible'
+            console.log("pop up")
+            document.getElementById(lightBoxImageDiv).src = allImages[index].src
+          }
+        }
       })
 
       canvas.on("mouse:over", function (e) {
-        let index = e.target?.tooltipRef
-        if (allImages[index] != null)
-        {
-          var toolTip = document.getElementById("toolTip")
-          toolTip.style.visibility = 'visible'
-          console.log(e.e.clientX + " x " + e.e.clientY)
-          toolTip.style.backgroundImage = "url(" + allImages[index].src + ")"
-          document.getElementById("tooltip-message").innerHTML = allImages[index].message
-          document.getElementById("tooltip-author").innerHTML = allImages[index].artist
-          this.isHover = true
-
-          
-          
-          
-        }
-        // let tooltip = e.target?.tooltipRef
-        // if (tooltip && tooltipState == "") {
-        //   tooltipState = tooltip
-        //   let span = document.querySelector('span[id="' + tooltip + '"]')
-        //   span.style.visibility = 'visible'
-        //   span.style.top = e.e.offsetY + 'px'
-        //   span.style.left = e.e.offsetX + 'px'
+        // let index = e.target?.tooltipRef
+        // if (allImages[index] != null)
+        // {
+        //   var toolTip = document.getElementById(lightBox)
+        //   toolTip.style.visibility = 'visible'
+        //   toolTip.style.backgroundImage = "url(" + allImages[index].src + ")"
+        //   document.getElementById("tooltip-message").innerHTML = allImages[index].message
+        //   document.getElementById("tooltip-author").innerHTML = allImages[index].artist
+        //   this.isHover = true
         // }
       })
 
       canvas.on("mouse:out", function (e) {
-        let index = e.target?.tooltipRef
-        if (allImages[index] != null) {
-          var toolTip = document.getElementById("toolTip")
-          toolTip.style.visibility = 'hidden'
-          this.isHover = false
-        }
+        // let index = e.target?.tooltipRef
+        // if (allImages[index] != null) {
+        //   var toolTip = document.getElementById(lightBox)
+        //   toolTip.style.visibility = 'hidden'
+        //   this.isHover = false
+        // }
       })
 
       // canvas.on('after:render', function() {
@@ -238,18 +211,6 @@ export default class Canvas extends React.Component {
           canvas.add(imgInstance)
         }
       })
-      
-      zoom = (window.innerWidth - widthPadding) / 1710
-      var tooltip = document.getElementById("toolTip")
-      tooltip.style.width = tooltipBaseWitdh * zoom + "px";
-      tooltip.style.height = tooltipBaseHeight * zoom + "px";
-      document.getElementById("tooltip-message").style.fontSize = messageBaseSize * zoom + "px";
-      document.getElementById("tooltip-author").style.fontSize = authorBaseSize * zoom + "px";
-      
-      document.getElementById("toolTip").style.backgroundRepeat = "no-repeat";
-      document.getElementById("toolTip").style.backgroundPosition = "center";
-      document.getElementById("toolTip").style.backgroundSize = "contain";
-      
     }
     
   }
@@ -259,12 +220,9 @@ export default class Canvas extends React.Component {
       <React.Fragment>
         <div id="canvas-container">
           <canvas style={{ border: "solid 1px #555" }} id="imageboard" />
-          <div id="toolTip">
-            <p id="tooltip-message">Nunc sed blandit libero volutpat. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Neque volutpat ac tincidunt vitae semper quis lectus nulla. Elit duis tristique sollicitudin nibh sit amet commodo.</p>
-            <p id="tooltip-author">Author</p>
-          </div>
+          
           {/* {this.state.images.map((image, index) => {
-            return <span id={"ref" + index} className="toolTip"><img src={image.src} width="100%"/></span>
+            return <span id={"ref" + index} className=lightBox><img src={image.src} width="100%"/></span>
           })} */}
         </div>
       </React.Fragment>
