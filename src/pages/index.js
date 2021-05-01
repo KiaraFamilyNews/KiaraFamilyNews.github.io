@@ -47,33 +47,30 @@ export default class IndexPage extends React.Component {
                         <div id="articles" className="nav-category">
                             <h4>Articles</h4>
                             <ul>
-                                <li>Road to 1 million</li>
-                                <li>The fandom</li>
-                                <li>Member origins</li>
+                                <li><a href="/articles/roadToMillion">Road to 1 million</a></li>
+                                <li><a href="/articles/theFandom">The fandom</a></li>
+                                <li><a href="/articles/memberOrigins">Member origins</a></li>
                             </ul>
                         </div>
                         <div id="art" className="nav-category">
                             <h4>Art</h4>
                             <ul>
-                                <li>Road to 1 million</li>
-                                <li>The fandom</li>
-                                <li>Member origins</li>
+                                <li><a href="/art/artCanvas">Community canvas</a></li>
+                                <li><a href="/art/meadow">A million petals</a></li>
+                                <li><a href="/art/minecraft">Minecraft</a></li>
                             </ul>
                         </div>
                         <div id="compilations" className="nav-category">
                             <h4>Compilations</h4>
                             <ul>
-                                <li>Road to 1 million</li>
-                                <li>The fandom</li>
-                                <li>Member origins</li>
+                                <li><a href="/compilations/hinotori">Hinotori projects</a></li>
+                                <li><a href="/compilations/moments">Memorable moments</a></li>
                             </ul>
                         </div>
                         <div id="messages" className="nav-category">
                             <h4>Messages</h4>
                             <ul>
-                                <li>Road to 1 million</li>
-                                <li>The fandom</li>
-                                <li>Member origins</li>
+                                <li><a href="/messages">From the community</a></li>
                             </ul>
                         </div>
                     </div>
