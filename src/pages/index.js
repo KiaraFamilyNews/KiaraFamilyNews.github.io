@@ -38,9 +38,9 @@ export default class IndexPage extends React.Component {
         return (
             <div id="index-main">
                 <SEO title="Home" />
-                <video id="background-video" poster={ChickenWaitingPoster} autoPlay muted loop>
+                <div id="background-video"><video poster={ChickenWaitingPoster} autoPlay muted loop>
                     <source src={ChickenWaiting} type="video/mp4"/>
-                </video>
+                </video></div>
                 <div id="navigation">
                     <div id="title">キアラ、100万人おめでとう！</div>
                     <div id="nav-contents">
