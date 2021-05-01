@@ -41,6 +41,7 @@ export default class IndexPage extends React.Component {
                 <div id="background-video"><video poster={ChickenWaitingPoster} autoPlay muted loop>
                     <source src={ChickenWaiting} type="video/mp4"/>
                 </video></div>
+                <div id="mobile-only"></div>
                 <div id="navigation">
                     <div id="title">キアラ、100万人おめでとう！</div>
                     <div id="nav-contents">
