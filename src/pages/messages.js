@@ -49,7 +49,7 @@ export default class MessagesPage extends React.Component {
                 <Header className="navbar-messages" siteTitle="Kiara Million" />
                 <div className="message-container">
                     <h1>Messages</h1>
-                    <Gallery photos={messages} margin={5} direction={"column"} onClick={this.test} renderImage={Message} />
+                    <Gallery photos={messages} margin={15} direction={"column"} onClick={this.test} renderImage={Message} />
                     {/* <Gallery photos={photos} margin={5} direction={"column"} onClick={this.test} /> */}
                     {this.state.shown ? <PopUp toggle={this.togglePop} /> : null}
                 </div>
