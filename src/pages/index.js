@@ -14,6 +14,8 @@ import Header from "../components/header2"
 
 import "../styles/home.scss"
 
+let coverImageId = "cover-image";
+
 export default class IndexPage extends React.Component {
 
 
@@ -38,6 +40,9 @@ export default class IndexPage extends React.Component {
         return (
             <div id="index-main">
                 <SEO title="Home" />
+                <div id={coverImageId} onClick={hideCover}>
+                    <h1>Click to continue</h1>
+                </div>
                 <div id="background-video"><video poster={ChickenWaitingPoster} autoPlay muted loop>
                     <source src={ChickenWaiting} type="video/mp4"/>
                 </video></div>
@@ -79,4 +84,8 @@ export default class IndexPage extends React.Component {
             </div>
         )
     }
+}
+
+function hideCover() {
+    document.getElementById(coverImageId).classList.add('slideAnim');
 }
