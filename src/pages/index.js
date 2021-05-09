@@ -43,7 +43,7 @@ export default class IndexPage extends React.Component {
                 <div id="background">
                 </div>
                 <div id={coverImageId} onClick={hideCover}>
-                    <video poster={ChickenWaitingPoster} autoPlay muted loop>
+                    <video poster={ChickenWaitingPoster} autoPlay loop muted playsInline>
                         <source src={ChickenWaiting} type="video/mp4"/>
                     </video>
                     <h1>Click to continue</h1>
