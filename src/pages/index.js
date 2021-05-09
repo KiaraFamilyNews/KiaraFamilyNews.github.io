@@ -40,12 +40,14 @@ export default class IndexPage extends React.Component {
         return (
             <div id="index-main">
                 <SEO title="Home" />
+                <div id="background">
+                </div>
                 <div id={coverImageId} onClick={hideCover}>
+                    <video poster={ChickenWaitingPoster} autoPlay muted loop>
+                        <source src={ChickenWaiting} type="video/mp4"/>
+                    </video>
                     <h1>Click to continue</h1>
                 </div>
-                <div id="background-video"><video poster={ChickenWaitingPoster} autoPlay muted loop>
-                    <source src={ChickenWaiting} type="video/mp4"/>
-                </video></div>
                 <div id="mobile-only"></div>
                 <div id="navigation">
                     <div id="title">キアラ、100万人おめでとう！</div>
