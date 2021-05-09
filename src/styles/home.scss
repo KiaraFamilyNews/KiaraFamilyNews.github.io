@@ -48,7 +48,7 @@ body {
 
 .slideAnim {
     animation-fill-mode: forwards;
-    animation-name: slide;
+    animation-name: fade;
     animation-duration: 2s;
 }
 
@@ -57,7 +57,7 @@ body {
     to { top: -100%; visibility: hidden;}
 }
 
-@keyframes disolve {
+@keyframes fade {
     0% {  opacity:1.0; }
     100% { opacity:0.0; visibility: hidden;}
 }
