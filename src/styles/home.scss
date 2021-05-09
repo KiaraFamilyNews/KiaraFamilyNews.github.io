@@ -19,8 +19,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    height: 150%;
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     visibility: hidden;
 }
@@ -98,7 +98,7 @@ video {
     bottom: 0;
     width: 100%;
     height: 370px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     color: #eeeeee;
 }
