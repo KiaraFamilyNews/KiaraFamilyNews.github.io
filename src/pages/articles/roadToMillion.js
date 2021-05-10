@@ -1,4 +1,5 @@
 import "../../components/common"
+import "../../styles/articles/roadToMillion.css"
 
 import * as React from "react"
 
@@ -13,10 +14,10 @@ export default class RoadToMillionPage extends React.Component {
     render() {
         return (
             <div>
-                <Seo title="Home" />
+                <Seo title="Road to 1 million" />
+                <div id="rtm-background"></div>
                 <NavigationBar siteTitle="Kiara Million" />
                 <div>
-                    <h1>Road to 1 Million</h1>
                 </div>
             </div>
         )

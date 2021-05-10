@@ -1,4 +1,5 @@
 import "../../components/common"
+import "../../styles/articles/theFandom.css"
 
 import * as React from "react"
 
@@ -14,10 +15,10 @@ export default class TheFandomPage extends React.Component {
     render() {
         return (
             <div>
-                <Seo title="Home" />
+                <Seo title="About the KFP" />
+                <div id="atk-background"></div>
                 <NavigationBar siteTitle="Kiara Million" />
                 <div>
-                    <h1>The Fandom</h1>
                 </div>
             </div>
         )
