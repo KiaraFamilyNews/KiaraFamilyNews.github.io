@@ -3,7 +3,7 @@ import "../../styles/art/artCanvas.css"
 
 import * as React from "react"
 
-import SEO from "../../components/seo"
+import Seo from "../../components/seo"
 import Header from "../../components/header2"
 
 import {
@@ -30,7 +30,7 @@ export default class TheFandomPage extends React.Component {
         return (
             <div>
                 <div id="toolTip" onClick={DisableLightBox}><div className="imageDiv"><img id="image"/></div></div>
-                <SEO title="Home" />
+                <Seo title="Home" />
                 <Header siteTitle="Kiara Million" />
                 <div className="art-canvas-content">
                     <h1>Art Canvas</h1>

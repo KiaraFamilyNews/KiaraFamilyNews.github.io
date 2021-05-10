@@ -3,7 +3,7 @@ import "../components/layout"
 import * as React from "react"
 import { Link } from "gatsby"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Jumbotron from "react-bootstrap/Jumbotron"
 import Container from "react-bootstrap/Container"
 import LazyHero from 'react-lazy-hero';
@@ -37,7 +37,7 @@ export default class IndexPage extends React.Component {
     render() {
         return (
             <div id="index-main">
-                <SEO title="Home" />
+                <Seo title="Home" />
                 <div id="background-video"><video poster={ChickenWaitingPoster} autoPlay muted loop>
                     <source src={ChickenWaiting} type="video/mp4"/>
                 </video></div>

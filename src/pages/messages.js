@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 //import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Gallery from '../components/react-photo-gallery/Gallery'
 import PopUp from "../components/popup"
 import Message from "../components/Message"
@@ -45,7 +45,7 @@ export default class MessagesPage extends React.Component {
         
         return (
             <div>
-                <SEO title="Messages" />
+                <Seo title="Messages" />
                 <Header className="navbar-messages" siteTitle="Kiara Million" />
                 <div className="message-container">
                     <h1>Messages</h1>
