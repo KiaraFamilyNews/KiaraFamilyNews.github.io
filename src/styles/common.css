@@ -23,3 +23,8 @@
 body {
     background-color: #f9ded7;
 }
+
+.navbar-messages {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(10px);
+}
