@@ -158,17 +158,6 @@ video {
 }
 
 #nav-contents {
-    // margin: auto;
-    // width: 50%;
-    // padding: 10px;
-    // margin: 0;
-    // padding: 0;
-    // border: 0;
-    // font-size: 100%;
-    // font: inherit;
-    // vertical-align: baseline;
-    // box-sizing: inherit;
-    // height: 206px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -176,13 +165,6 @@ video {
 }
 
 .nav-category {
-    // height: 200px;
-    // float: left;
-    // padding-left: 10px;
-    // padding-right: 10px;
-    // -moz-box-sizing:    border-box;
-    // -webkit-box-sizing: border-box;
-    // box-sizing:        border-box;
     width: 200px;
     vertical-align:top;
     display: inline-block;

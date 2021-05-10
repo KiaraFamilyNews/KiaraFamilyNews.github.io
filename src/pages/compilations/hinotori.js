@@ -1,10 +1,9 @@
-import "../../components/layout"
+import "../../components/common"
 
 import * as React from "react"
-import { Link } from "gatsby"
 
-import SEO from "../../components/seo"
-import Header from "../../components/header2"
+import Seo from "../../components/seo"
+import NavigationBar from "../../components/navigationBar"
 
 export default class HinotoriPage extends React.Component {
     
@@ -14,8 +13,8 @@ export default class HinotoriPage extends React.Component {
     render() {
         return (
             <div>
-                <SEO title="Home" />
-                <Header siteTitle="Kiara Million" />
+                <Seo title="Home" />
+                <NavigationBar siteTitle="Kiara Million" />
                 <div>
                     <h1>Hinotori Project</h1>
                 </div>

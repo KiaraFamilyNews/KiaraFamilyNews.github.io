@@ -17,6 +17,7 @@ const Photo = ({ index, onClick, photo, margin, direction, top, left, key }) => 
 
   return (
     <img
+      alt="gallery"
       key={key}
       style={onClick ? { ...imgStyle, ...imgWithClick } : imgStyle}
       {...photo}

@@ -1,16 +1,13 @@
-import "../../components/layout"
+import "../../components/common"
 import "../../styles/art/artCanvas.css"
 
 import * as React from "react"
 
-import SEO from "../../components/seo"
-import Header from "../../components/header2"
+import Seo from "../../components/seo"
+import NavigationBar from "../../components/navigationBar"
 
 import {
-    BrowserView,
-    MobileView,
-    isBrowser,
-    isMobile
+    isBrowser
   } from "react-device-detect";
 import Canvas from "../../components/canvas/canvas"
 import Gallery from '../../components/react-photo-gallery/Gallery'
@@ -29,9 +26,13 @@ export default class TheFandomPage extends React.Component {
         
         return (
             <div>
-                <div id="toolTip" onClick={DisableLightBox}><div className="imageDiv"><img id="image"/></div></div>
-                <SEO title="Home" />
-                <Header siteTitle="Kiara Million" />
+                <div role="button" tabIndex="0" id="toolTip" onClick={DisableLightBox}>
+                    <div className="imageDiv">
+                        <img alt="fan artwork" id="image"/>
+                    </div>
+                </div>
+                <Seo title="Home" />
+                <NavigationBar siteTitle="Kiara Million" />
                 <div className="art-canvas-content">
                     <h1>Art Canvas</h1>
                     {isBrowser ? <Canvas images={images} widthPadding={32} heightPadding={142} lightBox="toolTip" lightBoxImageDiv="image"/> : <Gallery photos={images} margin={5} direction={"column"}/>}

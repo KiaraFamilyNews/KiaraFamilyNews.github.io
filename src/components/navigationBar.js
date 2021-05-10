@@ -1,13 +1,11 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import NavDropdown from "react-bootstrap/NavDropdown"
 
 const navbarId = "navbar"
 const paddingId = "nav-padding"
-export default class Header extends React.Component {
+export default class NavigationBar extends React.Component {
 
     constructor(props) {
         super(props)

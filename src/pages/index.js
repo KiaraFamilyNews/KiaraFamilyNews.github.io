@@ -1,18 +1,13 @@
-import "../components/layout"
+import "../components/common"
+import "../styles/index.css"
 
 import * as React from "react"
-import { Link } from "gatsby"
 
-import SEO from "../components/seo"
-import Jumbotron from "react-bootstrap/Jumbotron"
-import Container from "react-bootstrap/Container"
-import LazyHero from 'react-lazy-hero';
-import KiaraGangimari from '../images/kiara-gangimari.png'
+import Seo from "../components/seo"
 import ChickenWaiting from '../videos/waiting-for-chikin.mp4'
 import ChickenWaitingPoster from '../images/waiting-for-chikin.png'
-import Header from "../components/header2"
 
-import "../styles/home.scss"
+
 
 let coverImageId = "cover-image";
 
@@ -39,10 +34,10 @@ export default class IndexPage extends React.Component {
     render() {
         return (
             <div id="index-main">
-                <SEO title="Home" />
+                <Seo title="Home" />
                 <div id="background">
                 </div>
-                <div id={coverImageId} onClick={hideCover}>
+                <div role="button" tabIndex="0" id={coverImageId} onClick={hideCover} onKeyDown={hideCover}>
                     <video poster={ChickenWaitingPoster} autoPlay loop muted playsInline>
                         <source src={ChickenWaiting} type="video/mp4"/>
                     </video>
