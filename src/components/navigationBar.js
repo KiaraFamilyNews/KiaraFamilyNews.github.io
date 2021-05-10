@@ -5,7 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown"
 
 const navbarId = "navbar"
 const paddingId = "nav-padding"
-export default class Header extends React.Component {
+export default class NavigationBar extends React.Component {
 
     constructor(props) {
         super(props)

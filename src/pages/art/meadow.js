@@ -1,9 +1,9 @@
-import "../../components/layout"
+import "../../components/common"
 
 import * as React from "react"
 
 import Seo from "../../components/seo"
-import Header from "../../components/header2"
+import NavigationBar from "../../components/navigationBar"
 
 export default class MeadowPage extends React.Component {
 
@@ -15,7 +15,7 @@ export default class MeadowPage extends React.Component {
         return (
             <div>
                 <Seo title="Home" />
-                <Header siteTitle="Kiara Million" />
+                <NavigationBar siteTitle="Kiara Million" />
                 <div>
                     <h1>Meadow of a million flowers</h1>
                 </div>

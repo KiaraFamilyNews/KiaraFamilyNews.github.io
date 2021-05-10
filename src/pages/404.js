@@ -1,14 +1,14 @@
-import "../components/layout"
+import "../components/common"
 
 import * as React from "react"
 
 import Seo from "../components/seo"
-import Header from "../components/header2"
+import NavigationBar from "../components/navigationBar"
 
 const NotFoundPage = () => (
   <div>
     <Seo title="404: Not found" />
-    <Header siteTitle="Kiara Million" />
+    <NavigationBar siteTitle="Kiara Million" />
     <h1>404: Not Found</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
   </div>

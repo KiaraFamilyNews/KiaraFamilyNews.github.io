@@ -1,10 +1,10 @@
-import "../../components/layout"
+import "../../components/common"
 import "../../styles/art/artCanvas.css"
 
 import * as React from "react"
 
 import Seo from "../../components/seo"
-import Header from "../../components/header2"
+import NavigationBar from "../../components/navigationBar"
 
 import {
     isBrowser
@@ -26,9 +26,13 @@ export default class TheFandomPage extends React.Component {
         
         return (
             <div>
-                <div id="toolTip" onClick={DisableLightBox}><div className="imageDiv"><img id="image"/></div></div>
+                <div role="button" tabIndex="0" id="toolTip" onClick={DisableLightBox}>
+                    <div className="imageDiv">
+                        <img alt="fan artwork" id="image"/>
+                    </div>
+                </div>
                 <Seo title="Home" />
-                <Header siteTitle="Kiara Million" />
+                <NavigationBar siteTitle="Kiara Million" />
                 <div className="art-canvas-content">
                     <h1>Art Canvas</h1>
                     {isBrowser ? <Canvas images={images} widthPadding={32} heightPadding={142} lightBox="toolTip" lightBoxImageDiv="image"/> : <Gallery photos={images} margin={5} direction={"column"}/>}

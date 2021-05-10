@@ -1,4 +1,5 @@
-import "../components/layout"
+import "../components/common"
+import "../styles/index.css"
 
 import * as React from "react"
 
@@ -6,7 +7,7 @@ import Seo from "../components/seo"
 import ChickenWaiting from '../videos/waiting-for-chikin.mp4'
 import ChickenWaitingPoster from '../images/waiting-for-chikin.png'
 
-import "../styles/home.scss"
+
 
 export default class IndexPage extends React.Component {
 

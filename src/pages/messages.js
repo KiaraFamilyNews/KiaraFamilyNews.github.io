@@ -1,14 +1,14 @@
-import "../components/layout"
+import "../components/common"
 import "../styles/messages.css"
 
 import * as React from "react"
 
-//import Layout from "../components/layout"
+//import Layout from "../components/common"
 import Seo from "../components/seo"
 import Gallery from '../components/react-photo-gallery/Gallery'
 import PopUp from "../components/popup"
 import Message from "../components/Message"
-import Header from "../components/header2"
+import NavigationBar from "../components/navigationBar"
 
 
 export default class MessagesPage extends React.Component {
@@ -44,7 +44,7 @@ export default class MessagesPage extends React.Component {
         return (
             <div>
                 <Seo title="Messages" />
-                <Header className="navbar-messages" siteTitle="Kiara Million" />
+                <NavigationBar className="navbar-messages" siteTitle="Kiara Million" />
                 <div className="message-container">
                     <h1>Messages</h1>
                     <Gallery photos={messages} margin={15} direction={"column"} onClick={this.test} renderImage={Message} />
