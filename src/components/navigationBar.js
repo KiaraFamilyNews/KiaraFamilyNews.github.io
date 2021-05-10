@@ -33,22 +33,20 @@ export default class NavigationBar extends React.Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                        <NavDropdown title="Articles" id="collasible-nav-dropdown">
+                            <NavDropdown title="KFN" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="/articles/roadToMillion">Road to 1 million</NavDropdown.Item>
-                                <NavDropdown.Item href="/articles/theFandom">The fandom</NavDropdown.Item>
-                                <NavDropdown.Item href="/articles/memberOrigins">Member origins</NavDropdown.Item>
-                                {/* <NavDropdown.Divider /> */}
+                                <NavDropdown.Item href="/articles/theFandom">About the KFP</NavDropdown.Item>
                             </NavDropdown>
-                            <NavDropdown title="Art" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="/art/artCanvas">Art Canvas</NavDropdown.Item>
-                                <NavDropdown.Item href="/art/meadow">Meadow of a million flowers</NavDropdown.Item>
-                                <NavDropdown.Item href="/art/minecraft">Minecraft project</NavDropdown.Item>
-                            </NavDropdown>
-                            <NavDropdown title="Compilations" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="/compilations/hinotori">Hinotori project</NavDropdown.Item>
+                            <NavDropdown title="1 million works" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="/compilations/moments">Memorable moments</NavDropdown.Item>
+                                <NavDropdown.Item href="/art/minecraft">Minecraft walkthrough</NavDropdown.Item>
+                                <NavDropdown.Item href="/art/artCanvas">Community Canvas</NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link href="/messages">Messages</Nav.Link>
+                            <Nav.Link href="/compilations/hinotori">Hinotori project</Nav.Link>
+                            <NavDropdown title="Articles" id="collasible-nav-dropdown">
+                                <NavDropdown.Item href="/messages">From the community</NavDropdown.Item>
+                                <NavDropdown.Item href="/articles/memberOrigins">Member origins</NavDropdown.Item>
+                            </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
