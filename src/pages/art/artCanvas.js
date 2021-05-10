@@ -7,10 +7,7 @@ import Seo from "../../components/seo"
 import Header from "../../components/header2"
 
 import {
-    BrowserView,
-    MobileView,
-    isBrowser,
-    isMobile
+    isBrowser
   } from "react-device-detect";
 import Canvas from "../../components/canvas/canvas"
 import Gallery from '../../components/react-photo-gallery/Gallery'

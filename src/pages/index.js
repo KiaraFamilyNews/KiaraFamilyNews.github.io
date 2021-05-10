@@ -1,16 +1,10 @@
 import "../components/layout"
 
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Seo from "../components/seo"
-import Jumbotron from "react-bootstrap/Jumbotron"
-import Container from "react-bootstrap/Container"
-import LazyHero from 'react-lazy-hero';
-import KiaraGangimari from '../images/kiara-gangimari.png'
 import ChickenWaiting from '../videos/waiting-for-chikin.mp4'
 import ChickenWaitingPoster from '../images/waiting-for-chikin.png'
-import Header from "../components/header2"
 
 import "../styles/home.scss"
 

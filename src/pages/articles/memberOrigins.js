@@ -1,7 +1,6 @@
 import "../../components/layout"
 
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Seo from "../../components/seo"
 import Header from "../../components/header2"
