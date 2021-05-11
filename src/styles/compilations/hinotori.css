@@ -1,0 +1,42 @@
+#hntp-background {
+    background-image: url('../../images/kiara-hinotori.jpg');
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    z-index: -5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.article{
+    padding: 30px 100px 10px 100px;
+    background: none no-repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    color: white;
+}
+
+#hinotori-content{
+    padding: 0 8rem;
+    padding-top: 2rem;
+    max-width: 1800px;
+    text-align: center;
+    margin: auto;
+}
+
+@media (max-width: 975px) {
+    #hinotori-content{
+        padding: 1rem 1rem 1.45rem;
+        max-width: 1800px;
+    }
+
+    .article{
+        padding: 30px 30px 10px 30px;
+        background: none no-repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        color: white;
+    }
+}
