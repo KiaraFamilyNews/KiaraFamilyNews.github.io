@@ -5,9 +5,8 @@ import * as React from "react"
 
 import Seo from "../components/seo"
 import ChickenWaiting from '../videos/waiting-for-chikin.mp4'
+import BgmSound from '../sounds/sound.mp3'
 import ChickenWaitingPoster from '../images/waiting-for-chikin.png'
-
-
 
 let coverImageId = "cover-image";
 
@@ -80,8 +79,32 @@ export default class IndexPage extends React.Component {
             </div>
         )
     }
+	
+	componentDidMount() {
+	  const script = document.createElement("script");
+	  script.src = "https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js";
+	  script.async = true;
+	  script.onload = () => this.scriptLoaded();
+
+	  document.body.appendChild(script);
+	}
+	
+	scriptLoaded(){
+		if("Howl" in window){
+			window.bgmSound = new window.Howl({
+			  src: [BgmSound],
+			  autoplay: true
+			});
+		}
+	}
 }
 
 function hideCover() {
     document.getElementById(coverImageId).classList.add('slideAnim');
+	// Can happen in some browsers that won't allow playing bgm 
+	// until after the first user intereaction
+	if("bgmSound " in window && !window.bgmSound .playing()){
+		// not playing yet --> play
+		window.bgmSound.play()
+	}
 }
