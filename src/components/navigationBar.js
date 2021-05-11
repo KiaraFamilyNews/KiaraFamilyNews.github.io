@@ -43,7 +43,7 @@ export default class NavigationBar extends React.Component {
                                 <NavDropdown.Item href="/art/artCanvas">Community Canvas</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="/compilations/hinotori">Hinotori project</Nav.Link>
-                            <NavDropdown title="Articles" id="collasible-nav-dropdown">
+                            <NavDropdown title="From the KFP" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="/messages">From the community</NavDropdown.Item>
                                 <NavDropdown.Item href="/articles/memberOrigins">Member origins</NavDropdown.Item>
                             </NavDropdown>

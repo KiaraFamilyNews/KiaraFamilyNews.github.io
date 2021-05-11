@@ -79,7 +79,7 @@ const messages = [
     },
     {
         width: 1,
-        height: 0.8,
+        height: 0.9,
         message: "Congratulations! I got into hololive because of you, my english is bad so I started studying more after your minecraft streams. I even draw comics on reddit (I'm the dude of \"More adventures with Kiara\")",
         author: "Leo3oooX - KFP Ninja"
     },
@@ -103,13 +103,13 @@ const messages = [
     },
     {
         width: 1,
-        height: 0.85,
+        height: 0.9,
         message: "Hello, I am Clan I've watched some of your steams. A close friend introduced me to KFP, a lot of people there are my best friends now. You are amazing at what you do. Thank you for being you. Here's to 1 million subs!",
         author: "Clan, KFP Member"
     },
     {
         width: 1,
-        height: 0.9,
+        height: 0.7,
         message: "Hi 店長! Congrats!\nYour stories and skills have motivated me to relearn Chinese and interact more. 感謝 for helping me how 鳥ch out to people!",
         author: "火鳥, KFP Tax Auditor"
     },
@@ -139,7 +139,7 @@ const messages = [
     },
     {
         width: 1,
-        height: 0.9,
+        height: 1,
         message: "Tenchou おめでとうございます！That's the extent of my Japanese, forgive me Tenchou. It brings a tear to my eye seeing you reach 1 million, you deserve it  honestly! Seeing how hardworking and entertaining you are, keep up the good work!",
         author: "Odzi"
     },
@@ -151,13 +151,13 @@ const messages = [
     },
     {
         width: 1,
-        height: 0.9,
+        height: 1,
         message: "店長、百万羽おめでとうございます！ You've changed so much and come so far. Words can't express why I enjoy watching you and I don't regret the time spent with you and KFP! I wish you buckets of success and happiness in the future! Seeyanara~",
         author: "Yagaru"
     },
     {
         width: 1,
-        height: 0.9,
+        height: 0.85,
         message: "It's amazing how far you've come and we've all grown so close over time. Thank you for everything you do and I can't wait to see what you do in the future! Love ya Tenchou!",
         author: "King Mufasa"
     },
@@ -175,7 +175,7 @@ const messages = [
     },
     {
         width: 1,
-        height: 0.9,
+        height: 0.85,
         message: "Congrats on 1mil Kiara! I'm so proud of you, you truly are an inspiration to work hard! Let's toast a glass of gravy to the future milestones and all the fun we'll have! Love you tenchou!",
         author: "Magic"
     }
