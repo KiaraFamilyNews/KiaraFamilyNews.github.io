@@ -178,6 +178,36 @@ const messages = [
         height: 0.85,
         message: "Congrats on 1mil Kiara! I'm so proud of you, you truly are an inspiration to work hard! Let's toast a glass of gravy to the future milestones and all the fun we'll have! Love you tenchou!",
         author: "Magic"
+    },
+    {
+        width: 1,
+        height: 0.85,
+        message: "Kiara, alles Gute zu einer Millionen Abonnenten! おめでとう！I wish you all the best, you deserve it. I'm glad that I stumbled upon you and became  part of your community.",
+        author: "kalmen"
+    },
+    {
+        width: 1,
+        height: 0.85,
+        message: "almost forgot about my message おめでとう Kiara on 1 milion! It is honor to witness your journey since beginning and watch you conquering difficulties, fulfilling dreams with all your hard work, dedication and tenacity. Thank you for letting us support you",
+        author: "Hokan"
+    },
+    {
+        width: 1,
+        height: 0.85,
+        message: "I should have submitted something much earlier but here we are. Tenchou! Congratulations on reaching 1M subscribers! As expected of a phoenix, no challenge could ever get you down or stop you from growing. May you always rise from the ashes as you've done so far. Thank you for being you!",
+        author: "Key Staff"
+    },
+    {
+        width: 1,
+        height: 0.85,
+        message: "Congratulations on 1 million subs Tenchou! It's been a long and fun journey and I'm expecting more to come! I am your employee and always here to support you for the unforeseeable future to come! ",
+        author: "ZeroRyuk"
+    },
+    {
+        width: 1,
+        height: 0.85,
+        message: "Congratulations on 1M Tenchou! We've come so far, i can help but to feel proud, about you and the community. But this is only the beginning of the journey and i can't wait to see the great things i'm sure you'll accomplish",
+        author: "FRS"
     }
 
 ];
