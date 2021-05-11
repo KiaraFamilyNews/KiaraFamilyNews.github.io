@@ -103,7 +103,7 @@ function hideCover() {
     document.getElementById(coverImageId).classList.add('slideAnim');
 	// Can happen in some browsers that won't allow playing bgm 
 	// until after the first user intereaction
-	if("bgmSound " in window && !window.bgmSound .playing()){
+	if("bgmSound " in window && !window.bgmSound.playing()){
 		// not playing yet --> play
 		window.bgmSound.play()
 	}

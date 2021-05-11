@@ -26,7 +26,7 @@ export default class TheFandomPage extends React.Component {
         
         return (
             <div>
-                <div role="button" tabIndex="0" id="toolTip" onClick={DisableLightBox}>
+                <div role="button" tabIndex="0" id="toolTip" onClick={DisableLightBox} onKeyDown={DisableLightBox}>
                     <div className="imageDiv">
                         <img alt="fan artwork" id="image"/>
                     </div>
