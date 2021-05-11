@@ -187,25 +187,25 @@ const messages = [
     },
     {
         width: 1,
-        height: 0.85,
-        message: "almost forgot about my message おめでとう Kiara on 1 milion! It is honor to witness your journey since beginning and watch you conquering difficulties, fulfilling dreams with all your hard work, dedication and tenacity. Thank you for letting us support you",
+        height: 0.9,
+        message: "おめでとう Kiara on 1 milion! It is honor to witness your journey since beginning and watch you conquering difficulties, fulfilling dreams with all your hard work, dedication and tenacity. Thank you for letting us support you",
         author: "Hokan"
     },
     {
         width: 1,
-        height: 0.85,
-        message: "I should have submitted something much earlier but here we are. Tenchou! Congratulations on reaching 1M subscribers! As expected of a phoenix, no challenge could ever get you down or stop you from growing. May you always rise from the ashes as you've done so far. Thank you for being you!",
+        height: 0.95,
+        message: "Tenchou! Congratulations on reaching 1M subscribers! As expected of a phoenix, no challenge could ever get you down or stop you from growing. May you always rise from the ashes as you've done so far. Thank you for being you!",
         author: "Key Staff"
     },
     {
         width: 1,
-        height: 0.85,
+        height: 0.9,
         message: "Congratulations on 1 million subs Tenchou! It's been a long and fun journey and I'm expecting more to come! I am your employee and always here to support you for the unforeseeable future to come! ",
         author: "ZeroRyuk"
     },
     {
         width: 1,
-        height: 0.85,
+        height: 0.95,
         message: "Congratulations on 1M Tenchou! We've come so far, i can help but to feel proud, about you and the community. But this is only the beginning of the journey and i can't wait to see the great things i'm sure you'll accomplish",
         author: "FRS"
     }
