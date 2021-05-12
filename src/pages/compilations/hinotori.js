@@ -46,42 +46,75 @@ export default class HinotoriPage extends React.Component {
 var credits = [
     {
         name: "Yagoo",
-        role: "Video Editor",
+        roles: [
+            "Video Editor",
+            "Best Girl",
+            "Just a Chad"
+        ],
         twitterHandle: "tanigox"
     },
     {
         name: "Yagoo",
-        role: "Video Editor",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
         twitterHandle: "tanigox"
     },
     {
         name: "Yagoo",
-        role: "Video Editor",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
         twitterHandle: "tanigox"
     },
     {
         name: "Yagoo",
-        role: "Video Editor",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
         twitterHandle: "tanigox"
     },
     {
         name: "Yagoo",
-        role: "Video Editor",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
         twitterHandle: "tanigox"
     },
     {
         name: "Yagoo",
-        role: "Video Editor",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
         twitterHandle: "tanigox"
     },
     {
         name: "Yagoo",
-        role: "Video Editor",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
         twitterHandle: "tanigox"
     },
     {
         name: "Yagoo",
-        role: "Video Editor",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
+        twitterHandle: "tanigox"
+    },
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
         twitterHandle: "tanigox"
     }
 ]

@@ -11,11 +11,11 @@ const Credits = React.memo(function Credits({
         <React.Fragment>
             <div id="credit-container" className={className}>
                 <h1>Credits</h1>
-                {creditArray.map((credit, index) => {
+                {creditArray.map((credit) => {
                     return <div className="credit">
                         <h6>{credit.name}</h6>
                         <ul>
-                            <li>{credit.role}</li>
+                            {credit.roles.map((role) =>{return <li>{role}</li>})}
                             <li><a href={"https://twitter.com/" + credit.twitterHandle}>@{credit.twitterHandle}</a></li>
                         </ul>
                     </div>

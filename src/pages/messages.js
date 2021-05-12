@@ -9,6 +9,7 @@ import Gallery from '../components/react-photo-gallery/Gallery'
 import PopUp from "../components/popup"
 import Message from "../components/Message"
 import NavigationBar from "../components/navigationBar"
+import Credits from "../components/credits"
 
 
 export default class MessagesPage extends React.Component {
@@ -49,14 +50,88 @@ export default class MessagesPage extends React.Component {
                 <div className="message-container">
                     <h1 Id="page-title">Messages</h1>
                     <Gallery photos={messages} margin={15} direction={"column"} onClick={this.test} renderImage={Message} />
-                    {/* <Gallery photos={photos} margin={5} direction={"column"} onClick={this.test} /> */}
-                    {this.state.shown ? <PopUp toggle={this.togglePop} /> : null}
+                    <Credits className="credit-container" creditArray={credits}/>
                 </div>
             </div>
         )
     }
 }
 
+var credits = [
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl",
+            "Just a Chad"
+        ],
+        twitterHandle: "tanigox"
+    },
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
+        twitterHandle: "tanigox"
+    },
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
+        twitterHandle: "tanigox"
+    },
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
+        twitterHandle: "tanigox"
+    },
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
+        twitterHandle: "tanigox"
+    },
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
+        twitterHandle: "tanigox"
+    },
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
+        twitterHandle: "tanigox"
+    },
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
+        twitterHandle: "tanigox"
+    },
+    {
+        name: "Yagoo",
+        roles: [
+            "Video Editor",
+            "Best Girl"
+        ],
+        twitterHandle: "tanigox"
+    }
+]
 
 const messages = [
     {
