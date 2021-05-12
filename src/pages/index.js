@@ -6,9 +6,13 @@ import * as React from "react"
 import Seo from "../components/seo"
 import ChickenWaiting from '../videos/waiting-for-chikin.mp4'
 import BgmSound from '../sounds/sound.mp3'
+import KikkerikiOgg from '../sounds/Kikkeriki.ogg'
+import KikkerikiMp3 from '../sounds/Kikkeriki.mp3'
 import ChickenWaitingPoster from '../images/waiting-for-chikin.png'
+import KiaraBounce from '../images/kiarabouncing.png'
 
 let coverImageId = "cover-image";
+const kikkerikiId = "kiara-kikkeriki";
 
 export default class IndexPage extends React.Component {
 
@@ -41,6 +45,7 @@ export default class IndexPage extends React.Component {
                         <source src={ChickenWaiting} type="video/mp4"/>
                     </video>
                     <h1>Click to continue</h1>
+                    <div id={kikkerikiId}></div>
                 </div>
                 <div id="mobile-only"></div>
                 <div id="navigation">
@@ -93,18 +98,33 @@ export default class IndexPage extends React.Component {
 		if("Howl" in window){
 			window.bgmSound = new window.Howl({
 			  src: [BgmSound],
-			  autoplay: true
+			  autoplay: false,
+              loop: true
 			});
+            window.kikkeriki = new window.Howl({
+                src: [KikkerikiOgg, KikkerikiMp3],
+                autoplay: false,
+                loop: false,
+            });
+            window.kikkeriki.on('end', () => {
+                // Can happen in some browsers that won't allow playing bgm 
+                // until after the first user intereaction
+                if("bgmSound" in window && !window.bgmSound.playing()){
+                    // not playing yet --> play
+                    window.bgmSound.play()
+                }
+            })
 		}
 	}
 }
 
 function hideCover() {
     document.getElementById(coverImageId).classList.add('slideAnim');
+    document.getElementById(kikkerikiId).classList.add('kikkerikiAnim');
 	// Can happen in some browsers that won't allow playing bgm 
-	// until after the first user intereaction
-	if("bgmSound " in window && !window.bgmSound.playing()){
+	// until aftercontentpage_static_page__preview_view the first user intereaction
+	if("kikkeriki" in window && !window.kikkeriki.playing()){
 		// not playing yet --> play
-		window.bgmSound.play()
+		window.kikkeriki.play()
 	}
 }
